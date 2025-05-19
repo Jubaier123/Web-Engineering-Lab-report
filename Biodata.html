@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Bio Data Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      background: #f3f6f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #16a085;
+      padding-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #34495e;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #16a085;
+      outline: none;
+      box-shadow: 0 0 5px rgba(22, 160, 133, 0.3);
+    }
+
+    .flex-box {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .flex-box > div {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .section-box {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+
+    .profile-photo {
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border: 4px solid #16a085;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .button-group input {
+      background-color: #16a085;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button-group input[type="reset"] {
+      background-color: #7f8c8d;
+    }
+
+    .button-group input:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .required::after {
+      content: " *";
+      color: red;
+    }
+
+    @media (max-width: 600px) {
+      .flex-box {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Personal Bio Data Form</h1>
+    <form>
+      <img src="https://via.placeholder.com/150" class="profile-photo" alt="Profile Photo">
+      <input type="file" name="profile" accept="image/*">
+
+      <label class="required">Full Name</label>
+      <input type="text" name="name" required placeholder="Your Full Name" />
+
+      <div class="flex-box">
+        <div>
+          <label>Father's Name</label>
+          <input type="text" name="father" placeholder="Father's Name" />
+        </div>
+        <div>
+          <label>Mother's Name</label>
+          <input type="text" name="mother" placeholder="Mother's Name" />
+        </div>
+      </div>
+
+      <div class="flex-box">
+        <div>
+          <label>Date of Birth</label>
+          <input type="date" name="dob" />
+        </div>
+        <div>
+          <label>Gender</label>
+          <select name="gender">
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Address</label>
+      <textarea name="address" rows="3" placeholder="Current Address"></textarea>
+
+      <div class="flex-box">
+        <div>
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="e.g. 01XXXXXXXXX" />
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="example@mail.com" />
+        </div>
+      </div>
+
+      <label>LinkedIn Profile</label>
+      <input type="url" name="linkedin" placeholder="https://linkedin.com/in/username" />
+
+      <label>GitHub Profile</label>
+      <input type="url" name="github" placeholder="https://github.com/username" />
+
+      <label>Education</label>
+      <textarea name="education" rows="3" placeholder="Your Educational Background"></textarea>
+
+      <label>Skills</label>
+      <textarea name="skills" rows="3" placeholder="List of Skills (e.g., C++, Python, Design...)"></textarea>
+
+      <label>Languages Known</label>
+      <input type="text" name="languages" placeholder="e.g., Bangla, English, Hindi" />
+
+      <label>Blood Group</label>
+      <select name="blood">
+        <option value="">Select Blood Group</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>O+</option>
+        <option>O-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+      </select>
+
+      <label>Marital Status</label>
+      <div class="section-box flex-box">
+        <div><input type="radio" name="married" value="yes"> Married</div>
+        <div><input type="radio" name="married" value="no"> Unmarried</div>
+      </div>
+
+      <label>Hobbies</label>
+      <div class="section-box flex-box">
+        <div><input type="checkbox" name="hobby" value="reading"> Reading</div>
+        <div><input type="checkbox" name="hobby" value="gaming"> Gaming</div>
+        <div><input type="checkbox" name="hobby" value="traveling"> Traveling</div>
+        <div><input type="checkbox" name="hobby" value="drawing"> Drawing</div>
+        <div><input type="checkbox" name="hobby" value="cooking"> Cooking</div>
+        <div><input type="checkbox" name="hobby" value="sports"> Sports</div>
+      </div>
+
+      <label>Website / Portfolio</label>
+      <input type="url" name="portfolio" placeholder="https://yourportfolio.com" />
+
+      <div class="button-group">
+        <input type="submit" value="Submit Form" />
+        <input type="reset" value="Clear All" />
+      </div>
+    </form>
+  </div>
+</body>
+</html>
